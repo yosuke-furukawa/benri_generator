@@ -29,8 +29,8 @@ function drawFukidashi(ctx) {
     ctx.fillStyle = '#FFF';
     ctx.beginPath();
     roundRect(ctx, 10, 60, 300, 300, 12);
-    ctx.moveTo(350, 150);
-    ctx.lineTo(10, 250);
+    ctx.moveTo(350, 400);
+    ctx.lineTo(300, 250);
     ctx.lineTo(250, 280);
     ctx.closePath();
     ctx.fill();
@@ -56,7 +56,7 @@ function wrapText(ctx, text) {
     ctx.fillText(line, x, y);
 }
 function draw(ctx, size, text) {
-    loadImage("./resources/t_wada.png").then(function(image) {
+    loadImage("./resources/sonots.png").then(function(image) {
         ctx.clearRect(0, 0, size.width, size.height);
         ctx.drawImage(image, 0, 0, size.width, size.height);
         drawFukidashi(ctx);
@@ -66,8 +66,8 @@ function draw(ctx, size, text) {
 
 function main() {
     var canvasSize = {
-        width: 720,
-        height: 450
+        width: 800,
+        height: 720
     };
     var textarea = document.querySelector("#js-textarea");
     textarea.addEventListener("input", function(event) {
